@@ -293,6 +293,7 @@ def transfer(querydata, addr, server):
     key = querydata[2:].encode('hex')
 
     q_type, q_domain, response = private_dns_response(querydata)
+    #print "here ",response
     if response:
         server.sendto(response, addr)
         return
